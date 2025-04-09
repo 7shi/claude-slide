@@ -16,6 +16,7 @@ Claude で YouTube 動画の字幕情報からスライドを作成するため�
 - [現代ローマ人はラテン語を理解できるか？](https://codepen.io/7shi/embed/xbxNNeN?default-tab=result)
 - [イタリア人はメキシコのスペイン語を理解できるか？](https://codepen.io/7shi/embed/YPzboQN?default-tab=result)
 - [エスペラント理解度テスト: イタリア語話者の視点から](https://codepen.io/7shi/embed/zxYQgoo?default-tab=result)
+- [インターリングア VS ネオラテン ロマンス言語を統一するのはどちら？](https://codepen.io/7shi/embed/ZYEdYQb?default-tab=result)
 
 ※ これらは CodePen で動作しています。詳細は後述の「CodePen」を参照してください。
 
