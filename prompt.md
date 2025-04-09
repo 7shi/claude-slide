@@ -61,7 +61,7 @@ return (
 
 function Slide({ title, bgColor = "bg-gray-50", children }) {
 return (
-<div className={`slide-container ${bgColor} w-full m-4 rounded-lg shadow`}>
+<div className={`slide-container ${bgColor} w-full max-w-screen-lg m-4 rounded-lg shadow`}>
 <div className="container mx-auto px-4 py-6">
 <h2 className="slide-title text-3xl font-bold mb-6">{title}</h2>
 {children}
