@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# スライド作成プロンプト
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Claude で YouTube 動画からスライドを作成するためのプロンプトです。
 
-## Available Scripts
+## 準備
 
-In the project directory, you can run:
+Claude デスクトップアプリで [mcp-youtube](https://github.com/anaisbetts/mcp-youtube) を有効にします。
 
-### `npm start`
+## 設定
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Claude でプロジェクトを作成します。
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+プロジェクトナレッジ欄で指示の「編集」をクリックして、以下の内容を貼り付けます。
 
-### `npm test`
+- [prompt.md](prompt.md)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 使い方
 
-### `npm run build`
+プロジェクトの新規チャットで URL を入力すれば、作業が始まります。
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ステップごとに確認を求められるので、問題なければ `ok` と入力することで次に進みます。
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. 字幕データのダウンロード
+2. 内容の分析・スライド構造の設計
+3. アーティファクトで Markdown 形式の下書き
+4. アーティファクトで React コードの生成
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## トラブルシューティング
 
-### `npm run eject`
+よくある問題とその対処法を示します。
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- 「クロードがメッセージの最大文字数に達したため、応答を一時停止しています。「続ける」と入力してチャットを継続できます。」
+  - 生成するコードが長すぎると中断されます。「続ける」と入力すれば、続きから生成します。
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 「アーティファクトの実行エラー 生成された成果物の実行中にエラーが発生しました。 `Unexpected token (xx:xx)`」
+  - 直接入力できない文字が原因になっていることが多いです。「テキストエレメントの不等号とアンパサンドが文字実体参照になっているかを確認してください」と指示してみてください。
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## デバッグ
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+トラブルシューティングで直らない場合、修正を Claude に任せても解決することは少ないため、React コードをローカルでデバッグする必要があります。
 
-## Learn More
+このリポジトリの以下のファイルにアーティファクトで生成された React コードを貼り付けてください。
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [src/App.js](src/App.js)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`npm start` としてデバッグ用のサーバーを起動すれば、自動的にブラウザが開くはずです。開かない場合は手動で以下の URL を開いてください。
 
-### Code Splitting
+- http://localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+エラーの行数などが表示されているはずなので、その箇所を確認してください。
