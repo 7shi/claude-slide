@@ -109,3 +109,7 @@ CodePen での React 19 の使い方は以下の Pen を参照しました。
 
 - https://x.com/hAru_mAki_ch/status/1896533569968984546
 - https://x.com/hAru_mAki_ch/status/1902366494237016271
+
+アーティファクトでのレスポンシブデザインの使用にはハマり所があります。
+
+- [Claude のアーティファクトで Tailwind CSS のレスポンシブデザインにハマった - Qiita](https://qiita.com/7shi/items/a056f343ea4ee03285d9)
