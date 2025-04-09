@@ -1,6 +1,23 @@
 # スライド作成プロンプト
 
-Claude で YouTube 動画からスライドを作成するためのプロンプトです。
+Claude で YouTube 動画の字幕情報からスライドを作成するためのプロンプトです。スマートフォンでの視聴も想定して、レスポンシブデザインを考慮しています。
+
+※ スライドは動画の要約を目的としており、内容をすべて含むわけではありません。また、内容の正確さも保証できません。詳細な内容を知りたい場合、動画を視聴してください。
+
+## サンプル
+
+サンプルとして、このプロンプトで生成したスライドをいくつか示します。
+
+- [ループ量子重力論争：カルロ・ロヴェリの反論](https://codepen.io/7shi/embed/LEYooBK?default-tab=result)
+- [存在するはずのない重力理論](https://codepen.io/7shi/embed/QwWRPvL?default-tab=result)
+- [日本語は本当に難しくないのか？- 8年の学習経験から](https://codepen.io/7shi/embed/EaxzzGr?default-tab=result)
+- [中国語は英語に代わる共通語になるか？](https://codepen.io/7shi/embed/XJWwLbQ?default-tab=result)
+- [言語の標準化とは](https://codepen.io/7shi/embed/ByaegbO?default-tab=result)
+- [現代ローマ人はラテン語を理解できるか？](https://codepen.io/7shi/embed/xbxNNeN?default-tab=result)
+- [イタリア人はメキシコのスペイン語を理解できるか？](https://codepen.io/7shi/embed/YPzboQN?default-tab=result)
+- [エスペラント理解度テスト: イタリア語話者の視点から](https://codepen.io/7shi/embed/zxYQgoo?default-tab=result)
+
+※ これらは CodePen で動作しています。詳細は後述の「CodePen」を参照してください。
 
 ## 準備
 
@@ -22,8 +39,10 @@ Claude でプロジェクトを作成します。
 
 1. 字幕データのダウンロード
 2. 内容の分析・スライド構造の設計
-3. アーティファクトで Markdown 形式の下書き
-4. アーティファクトで React コードの生成
+3. Markdown 形式で下書き
+4. React コードの生成
+
+※ たまに飛ばして先に進むことがあります。
 
 ## トラブルシューティング
 
@@ -48,3 +67,38 @@ Claude でプロジェクトを作成します。
 - http://localhost:3000
 
 エラーの行数などが表示されているはずなので、その箇所を確認してください。
+
+## CodePen
+
+ローカルに React の環境構築ができない場合、[CodePen](https://codepen.io/) を使用するのが手軽です。
+
+1. 新規に Pen を作成
+2. HTML に以下の内容を記述
+```html
+<div id="root"></div>
+```
+3. JS タブの [⚙] をクリック
+4. JavaScript Preprocessor に Babel を選択
+5. [Save & Close] をクリック
+6. JS (Babel) の欄に React コードを貼り付け
+7. 先頭の `import` 文を以下に置き換え（存在しない場合は追加）
+```jsx
+import React from "https://esm.sh/react@19";
+import { createRoot } from "https://esm.sh/react-dom@19/client";
+```
+8. 末尾の `export` 文を以下に置き換え
+```jsx
+createRoot(root).render(<Presentation />);
+```
+
+公開リンクは、右下の Embed から Iframe の `src` 属性の値をコピーしてください。
+
+## 参考
+
+CodePen での React 19 の使い方は以下の Pen を参照しました。
+
+- https://codepen.io/chriscoyier/pen/RNboKBL
+
+このプロンプトは [Genspark](https://www.genspark.ai/) のスーパーエージェントに触発されて作成しました。そちらの方がより高性能なため、比較してみると良いでしょう。
+
+- https://x.com/tetumemo/status/1907519767394787804
