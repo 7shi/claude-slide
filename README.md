@@ -102,3 +102,8 @@ CodePen での React 19 の使い方は以下の Pen を参照しました。
 このプロンプトは [Genspark](https://www.genspark.ai/) のスーパーエージェントに触発されて作成しました。そちらの方がより高性能なため、比較してみると良いでしょう。
 
 - https://x.com/tetumemo/status/1907519767394787804
+
+[Maki](https://github.com/Sunwood-ai-labs) さんのグラフィックレコーディング風プロンプトは、非常に完成度が高いです。
+
+- https://x.com/hAru_mAki_ch/status/1896533569968984546
+- https://x.com/hAru_mAki_ch/status/1902366494237016271
