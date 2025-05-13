@@ -95,6 +95,12 @@ createRoot(root).render(<Presentation />);
 
 公開リンクは、右下の Embed から Iframe の `src` 属性の値をコピーしてください。
 
+## React
+
+このプロンプトによって生成される範囲内の React について解説しました。
+
+- [HTML の繰り返し構造をタグで共通化する React 入門](https://qiita.com/7shi/items/53324b515595df3fa442)
+
 ## 参考
 
 CodePen での React 19 の使い方は以下の Pen を参照しました。
